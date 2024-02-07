@@ -24,6 +24,7 @@ with engine.connect() as conn:
 print("\nTuple unpacking/assignment")
 with engine.connect() as conn:
     result = conn.execute(text("SELECT * FROM test"))
+    conn.commit()
     for x,y in result:
         print(f"id: {x}, name: {y}")
 
@@ -32,6 +33,7 @@ with engine.connect() as conn:
 print("\nInteger indexing")
 with engine.connect() as conn:
     result = conn.execute(text("SELECT * FROM test"))
+    conn.commit()
     for row in result:
         print(f"id: {row[0]}, name: {row[1]}")
 
@@ -39,6 +41,7 @@ with engine.connect() as conn:
 print("\nAttribute name")
 with engine.connect() as conn:
     result = conn.execute(text("SELECT * FROM test"))
+    conn.commit()
     for row in result:
         print(f"id: {row.id}, name: {row.name}")
 
@@ -46,6 +49,7 @@ with engine.connect() as conn:
 print("\nMapping access")
 with engine.connect() as conn:
     result = conn.execute(text("SELECT * FROM test"))
+    conn.commit()
     for row in result.mappings():
         x = row['id']
         y = row['name']
