@@ -16,7 +16,7 @@ with engine.connect() as conn:
 with engine.connect() as conn:
     #insert data
     result1 = conn.execute(text("INSERT INTO test (id, name) VALUES (:id, :name)"),
-                           [{"id": 11, "name": "test11"}, {"id": 12, "name": "test12"}, {"id": 13, "name": "test13"}])
+                           [{"id": 11, "name": "test11"}, {"id": 12, "name": "test12"}, {"id": 13, "name": "test13"}, {"id": 14, "name": "test14"}])
     conn.commit()
     
     
