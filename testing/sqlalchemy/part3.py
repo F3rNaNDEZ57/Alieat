@@ -22,6 +22,7 @@ with engine.connect() as conn:
     
     #fetch data as a query
     result2 = conn.execute(text("SELECT * FROM test WHERE id >= :id AND name = :name"), {"id": 2, "name": "test2"})
+    result3 = conn.execute(text("SELECT * FROM test WHERE id >= :id AND name = :name"), {"id": 12, "name": "test12"})
     conn.commit()
 
     print("\n\n")
